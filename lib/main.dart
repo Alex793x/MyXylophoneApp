@@ -12,22 +12,20 @@ class MyApp extends StatelessWidget {
     player.play(AssetSource('note$num.wav'));
   }
 
-  Expanded soundButtons(Color color, int value, String string) {
-    return Expanded(
-      child: Container(
-        color: color,
-        child: TextButton(
-          onPressed: () {
-            playSound(value);
-            if (kDebugMode) {
-              print('$string button was clicked');
-            }
-          },
-          child: Container(),
+  Expanded soundButtons(Color color, int value, String string) => Expanded(
+        child: Container(
+          color: color,
+          child: TextButton(
+            onPressed: () {
+              playSound(value);
+              if (kDebugMode) {
+                print('$string button was clicked');
+              }
+            },
+            child: Container(),
+          ),
         ),
-      ),
-    );
-  }
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +40,9 @@ class MyApp extends StatelessWidget {
               soundButtons(Colors.orange, 2, 'orange'),
               soundButtons(Colors.yellow, 3, 'yellow'),
               soundButtons(Colors.green, 4, 'green'),
-              soundButtons(Colors.teal, 4, 'teak'),
-              soundButtons(Colors.blue, 4, 'blue'),
-              soundButtons(Colors.purple, 4, 'purple'),
+              soundButtons(Colors.teal, 5, 'teak'),
+              soundButtons(Colors.blue, 6, 'blue'),
+              soundButtons(Colors.purple, 7, 'purple'),
             ],
           ),
         ),
